@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Email Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #result {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Email Validator</h2>
+    <input type="text" id="email" placeholder="Enter email">
+    <button onclick="validateEmail()">Validate</button>
+    <p id="result"></p>
+
+    <script>
+        function validateEmail() {
+            let email = document.getElementById("email").value;
+            let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let resultText = regex.test(email) ? "Valid Email" : "Invalid Email";
+            document.getElementById("result").innerText = resultText;
+        }
+    </script>
+</body>
+</html>
